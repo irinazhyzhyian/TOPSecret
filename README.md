@@ -5,6 +5,7 @@ Team:
 <<<<<<< HEAD
 Team Lead: Zhyzhyian Ira;
 Tester : Tereshonkova Alya;
+Front-end : Moiseienko Lisa; 
 =======
 Team Lead: Zhyzhyian Ira
 
