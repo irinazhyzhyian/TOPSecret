@@ -2,4 +2,5 @@
 
 Team:
 
-Team Lead: Zhyzhyian Ira
+Team Lead: Zhyzhyian Ira;
+Tester : Tereshonkova Alya;
