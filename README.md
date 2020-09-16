@@ -6,7 +6,7 @@ Team:
 Team Lead: Zhyzhyian Ira;
 Tester : Tereshonkova Alya;
 Front-end : Moiseienko Lisa; 
-Back-end: Dolgan Ksenia
+Back-end: Dolgan Kseniia
 =======
 Team Lead: Zhyzhyian Ira
 
