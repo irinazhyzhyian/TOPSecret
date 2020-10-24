@@ -43,11 +43,11 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
+        <a href="https://github.com/irinazhyzhyian/TOPSecret" class="simple-text logo-mini">
+          TS
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="https://github.com/irinazhyzhyian/TOPSecret" class="simple-text logo-normal">
+          TopSecret
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -104,6 +104,12 @@
             <a href="/orders">
               <i></i>
               <p>Orders</p>
+            </a>
+          </li>
+          <li class="{{ 'customcoffee' == request()->path() ? 'active' : '' }}">
+            <a href="/customcoffee">
+              <i></i>
+              <p>Custom Coffee</p>
             </a>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Registreded roles
+    Custom coffe
 @endsection
 
 @section('content')
@@ -9,51 +9,39 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Registered Roles</h4>
-                @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                <h4 class="card-title"> Custom Coffee </h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
-                      <th> ID</th>
-                      <th> Name</th>
-                      <th>Email</th>
-                      <th>Phone</th>
-                      <th>Usertype</th>
-                      <th>EDIT</th>
+                      <th>Id</th>
+                      <th>User</th>
+                      <th>Name</th>
                       <th>DELITE</th>
                     </thead>
                     <tbody>
-                        @foreach ($users as $row)
+                    @foreach ($customcoffee as $row)
                       <tr>
-                        <td>{{$row->id}}</td>
+                        <td> {{$row->id}}</td>
+                        <td>{{$row->users->name}}</td>
                         <td>{{$row->name}}</td>
-                        <td>{{$row->email}}</td>
-                        <td>{{$row->phone}}</td>
-                        <td>{{$row->usertype}}</td>
                         <td>
-                        <a href='/role-edit/{{ $row->id }}' class='btn btn-success'>EDET</a>
-                        </td>
-                        <td>
-                          <form action="/role-delete/{{ $row->id }}" mathod="post">
+                        <form action="/customcoffee-delete/{{ $row->id }}" mathod="post">
                             {{ csrf_field() }}
                             {{ method_field('GET') }}
                             <button type="submit" class='btn btn-danger'>DELETE</button>
                           </form>
                         </td>
                       </tr>
-                      @endforeach               
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
+  
 @endsection
 
 @section('scripts')

@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ingradients;
+use App\Models\Products;
+use App\Models\MenuItems;
+use App\Models\CustomCoffee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,61 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $coffee =  DB::table('products')
+        ->select(DB::raw('customcoffee.name as name, customcoffee.id as id, Sum(product_count*products.price) as price'))
+        ->join('ingradients', 'products.id', '=', 'ingradients.product_id')
+        ->join('customcoffee', 'customcoffee.id', '=', 'ingradients.custom_id')
+        ->groupby('customcoffee.name', 'customcoffee.id')
+        ->get();
+        return view('home')->with('coffee', $coffee);
+    }
+
+    public function edit(Request $request, $id) {
+        $recept = DB::table('products')
+        ->select(DB::raw('ingradients.id, products.id as pid, products.name, product_count'))
+        ->join('ingradients', 'products.id', '=', 'ingradients.product_id')
+        ->join('customcoffee', 'customcoffee.id', '=', 'ingradients.custom_id')
+        ->where('customcoffee.id', '=', $id)
+        ->get();
+        $products = Products::all();
+        return view('user.customcoffee-edit')->with('recept', $recept)->with('products', $products)->with('custId', $id);
+    }
+
+    public function update(Request $request, $id) {
+        $ingradients = Ingradients::find($id);
+        $ingradients->product_id = $request->input('product_id');
+        $ingradients->product_count = $request->input('product_count');
+    
+        $ingradients->update();
+    
+        return redirect()->back();
+        
+    }
+
+    public function delete(Request $request, $id){
+        $custom  = CustomCoffee::findOrFail($id);
+        $ingradients = Ingradients::where('custom_id', '=', $id)->delete();
+        $custom->delete();
+
+        return redirect('/home')->with('status', 'Your data is deleted!');
+    }
+
+    public function addingradient(Request $request, $id) {
+        $ingradients = new Ingradients();
+        $ingradients->product_id = $request->input('product_id');
+        $ingradients->product_count = $request->input('product_count');
+        $ingradients->custom_id = $id;
+
+        $ingradients->save();
+
+        return redirect()->back();
+    }
+
+    public function dellingradient(Request $request, $id) {
+        $id_i = $request->input('hid');
+        $ingradients = Ingradients::find($id);
+        $ingradients->delete();
+
+        return redirect()->back();
     }
 }

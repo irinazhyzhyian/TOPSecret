@@ -75,22 +75,25 @@
                     </thead>
                     <tbody>
                     @foreach ($ingradients as $row)
+                    @if($row->item_id!=null)
                       <tr>
                         <td> {{$row->id}}</td>
-                        <td>{{$row->menuitems->name}}</td>
-                        <td>{{$row->products->name}}</td>
-                        <td>{{$row->product_count}}</td>
+                         <td>{{$row->menuitems->name}}</td>
+                          <td>{{$row->products->name}}</td>
+                          <td>{{$row->product_count}}</td>
+                        
                         <td>
                             <a href='/ingradient-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
                         </td>
                         <td>
-                        <form action="/ingradient-delete/{{ $row->id }}" mathod="post">
+                          <form action="/ingradient-delete/{{ $row->id }}" mathod="post">
                             {{ csrf_field() }}
                             {{ method_field('GET') }}
                             <button type="submit" class='btn btn-danger'>DELETE</button>
                           </form>
                         </td>
                       </tr>
+                      @endif
                       @endforeach
                     </tbody>
                   </table>

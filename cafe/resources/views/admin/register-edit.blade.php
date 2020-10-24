@@ -24,7 +24,6 @@
                         <label >Give Role</label>
                         <select name="usertype" class="form-control">
                             <option value="admin">Admin</option>
-                            <option value="vendor">Vendor</option>
                             <option value="">NaN</option>
                         </select>
                     </div>

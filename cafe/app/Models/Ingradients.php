@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ingradients extends Model
 {
     protected $table = "ingradients";
-    protected $fillable = ['item_id', 'product_id', 'product_count'];
+    protected $fillable = ['product_id', 'product_count'];
 
     public function products()
     {
@@ -17,5 +17,10 @@ class Ingradients extends Model
     public function menuitems()
     {
         return $this->belongsTo('App\Models\MenuItems', 'item_id');
+    }
+
+    public function customcoffee()
+    {
+        return $this->belongsTo('App\Models\CustomCoffee', 'custom_id');
     }
 }

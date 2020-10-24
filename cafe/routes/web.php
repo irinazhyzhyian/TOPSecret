@@ -17,7 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home{id}', 'HomeController@index')->name('home');
+Route::get('/customcoffee-edit/{id}', 'HomeController@edit');
+Route::put('/customcoffee-update/{id}', 'HomeController@update' );
+Route::get('/customcoffee-delete/{id}', 'HomeController@delete');
+Route::any('/dellingradient/{id}', 'HomeController@dellingradient');
+Route::any('/customcoffee-ingradient/{id}', 'HomeController@addingradient');
+
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     
@@ -69,6 +75,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/order-edit/{id}', 'Admin\OrdersController@edit');
     Route::put('/order-update/{id}', 'Admin\OrdersController@update' );
     Route::get('/order-delete/{id}', 'Admin\OrdersController@delete');
+
+    Route::get('/customcoffee', 'Admin\CustomCoffeeController@index');
+    Route::get('/customcoffee/{id}', 'Admin\CustomCoffeeController@delete');
 });
 
 

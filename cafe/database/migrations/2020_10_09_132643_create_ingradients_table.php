@@ -16,10 +16,12 @@ class CreateIngradientsTable extends Migration
         Schema::create('ingradients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('item_id');
+            $table->integer('custom_id')->nullable();
             $table->integer('product_id');
             $table->foreign('item_id')->references('id')->on('menuitems');
+            $table->foreign('custom_id')->references('id')->on('customcoffee');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->integer('product_count')->unsigned();
+            $table->double('product_count', 6, 2)->unsigned();
             $table->timestamps();
         });
     }

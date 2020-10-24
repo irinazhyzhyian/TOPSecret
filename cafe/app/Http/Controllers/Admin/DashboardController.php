@@ -41,7 +41,7 @@ class DashboardController extends Controller
                     ->select(DB::raw('name, sum(orders.items_count) as c'))
                     ->join('orders', 'menuitems.id', '=', 'orders.item_id')
                     ->groupby('name')
-                    ->orderBy('c')
+                    ->orderBy('c', 'DESC')
                     ->get();
         return view('admin.dashboard')->with('range', $range);
     }
