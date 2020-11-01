@@ -20,6 +20,9 @@ class CreateCustomcoffeeTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
+	Schema::table('ingradients', function(Blueprint $table){
+            $table->foreign('custom_id')->references('id')->on('customcoffee');
+        });
     }
 
     /**

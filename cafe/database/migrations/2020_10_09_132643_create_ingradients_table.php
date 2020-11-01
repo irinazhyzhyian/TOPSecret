@@ -19,7 +19,6 @@ class CreateIngradientsTable extends Migration
             $table->integer('custom_id')->nullable();
             $table->integer('product_id');
             $table->foreign('item_id')->references('id')->on('menuitems');
-            $table->foreign('custom_id')->references('id')->on('customcoffee');
             $table->foreign('product_id')->references('id')->on('products');
             $table->double('product_count', 6, 2)->unsigned();
             $table->timestamps();
