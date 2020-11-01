@@ -84,6 +84,10 @@
                     Laravel
                 </div>
 
+                <script src="{{ asset('js/app.js') }}" defer></script>
+                <div id="example"></div>
+                
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>

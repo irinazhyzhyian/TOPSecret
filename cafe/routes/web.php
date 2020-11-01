@@ -17,13 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home{id}', 'HomeController@index')->name('home');
+/*Route::get('/home{id}', 'HomeController@index')->name('home');
 Route::get('/customcoffee-edit/{id}', 'HomeController@edit');
 Route::put('/customcoffee-update/{id}', 'HomeController@update' );
 Route::get('/customcoffee-delete/{id}', 'HomeController@delete');
 Route::any('/dellingradient/{id}', 'HomeController@dellingradient');
 Route::any('/customcoffee-ingradient/{id}', 'HomeController@addingradient');
-
+*/
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     
