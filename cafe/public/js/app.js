@@ -69908,14 +69908,16 @@ if (document.getElementById('example')) {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** multi ./resources/assets/js/app.js ./resources/js/app.js ./resources/sass/app.scss ./resources/assets/sass/app.scss ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\OpenServer\domains\cafe\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\OpenServer\domains\cafe\resources\sass\app.scss */"./resources/sass/app.scss");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\OpenServer\\domains\\gavno\\resources\\assets\\js\\app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+__webpack_require__(/*! D:\OpenServer\domains\gavno\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\OpenServer\domains\gavno\resources\sass\app.scss */"./resources/sass/app.scss");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\OpenServer\\domains\\gavno\\resources\\assets\\sass\\app.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })

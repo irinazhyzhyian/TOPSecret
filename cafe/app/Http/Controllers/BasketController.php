@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use App\Models\Ingradients;
-use App\Models\Products;
+use App\Models\Orders;
+use App\Models\Basket;
+use App\Models\OrdersInfo;
 use App\Models\MenuItems;
 use App\Models\CustomCoffee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
-{
-    /**
+class BasketController extends Controller
+{ /**
      * Create a new controller instance.
      *
      * @return void
@@ -28,17 +28,57 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
     public function index()
     {
-        $coffee =  DB::table('products')
-        ->select(DB::raw('customcoffee.name as name, customcoffee.id as id, Sum(product_count*products.price) as price'))
-        ->join('ingradients', 'products.id', '=', 'ingradients.product_id')
-        ->join('customcoffee', 'customcoffee.id', '=', 'ingradients.custom_id')
-        ->where('user_id', '=',Auth::user()->id)
-        ->groupby('customcoffee.name', 'customcoffee.id')
+        $id = Auth::user()->id;
+        $order = DB::table('public.menuitems')
+        ->select(DB::raw('public.basket.id, public.menuitems.name, description, price, item_count, users.name as usname, users.phone'))
+        ->join('public.basket', 'public.menuitems.id', '=', 'public.basket.item_id')
+        ->join('users', 'public.basket.user_id', '=', 'users.id')
+        ->where('user_id', '=', $id)
         ->get();
-        return view('home')->with('coffee', $coffee);
+        return view('user.basket')->with('order', $order)->with('user', Auth::user());
     }
+
+    public function pluscount(Request $request, $id) {
+        $order = Basket::findOrFail($id);
+        $order->item_count++;
+        $order->update();
+    
+        return redirect()->back();
+    }
+
+    public function minuscount(Request $request, $id) {
+        $order = Basket::findOrFail($id);
+        $order->item_count--;
+        $order->update();
+    
+        return redirect()->back();
+    }
+
+    public function createorder() {
+        $id = Auth::id();
+        $order = DB::table('public.menuitems')
+        ->select(DB::raw('public.basket.id, name, description, price, item_count'))
+        ->join('public.basket', 'public.menuitems.id', '=', 'public.basket.item_id')
+        ->where('user_id', '=', $id)
+        ->get();
+
+        foreach($order as $o){
+            $orders = new Orders();
+            $orders->item_id = $o->item_id;
+            $orders->order_info_id = $request->input('order_id');
+            $orders->items_count = $o->item_count;
+
+        $orders->save();
+        }
+    
+        return redirect()->back();
+    }
+
+
 
     public function edit(Request $request, $id) {
         $recept = DB::table('products')
@@ -63,11 +103,11 @@ class HomeController extends Controller
     }
 
     public function delete(Request $request, $id){
-        $custom  = CustomCoffee::findOrFail($id);
-        $ingradients = Ingradients::where('custom_id', '=', $id)->delete();
+        $custom  = Basket::findOrFail($id);
+        
         $custom->delete();
 
-        return redirect('/home')->with('status', 'Your data is deleted!');
+        return redirect('/cart')->with('status', 'Your data is deleted!');
     }
 
     public function addingradient(Request $request, $id) {

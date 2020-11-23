@@ -15,7 +15,7 @@ class CreateIngradientsTable extends Migration
     {
         Schema::create('ingradients', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('item_id');
+            $table->integer('item_id')->nullable();
             $table->integer('custom_id')->nullable();
             $table->integer('product_id');
             $table->foreign('item_id')->references('id')->on('menuitems');

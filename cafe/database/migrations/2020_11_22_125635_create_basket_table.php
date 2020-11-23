@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenuitemsTable extends Migration
+class CreateBasketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateMenuitemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('menuitems', function (Blueprint $table) {
+        Schema::create('basket', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 50);
-            $table->double('price', 6, 2);
-            $table->text('description')->nullable();
-            $table->string("photo", 255)->nullable();
+            $table->integer('user_id');
+            $table->integer('item_id');
+            $table->integer('item_count');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('item_id')->references('id')->on('menuitems');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateMenuitemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menuitems');
+        Schema::dropIfExists('basket');
     }
 }

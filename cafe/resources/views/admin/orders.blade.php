@@ -28,6 +28,14 @@
                 </select>
             </div>
             <div class="form-group">
+              <label for="custom_id" class="col-form-label">Custom Coffee:</label>
+              <select name="custom_id" id='custom_id' class="form-control">
+                        @foreach($customcoffes as $i)
+                            <option value="{{$i->id}}">{{$i->name}}</option>
+                        @endforeach
+                </select>
+            </div>
+            <div class="form-group">
               <label for="product" class="col-form-label">Order Info:</label>
               <select name="order_id" id='product_id' class="form-control">
                         @foreach($ordersinfo as $o)
@@ -68,6 +76,7 @@
                     <thead class=" text-primary">
                       <th>Id</th>
                       <th>Menu Item</th>
+                      <th>Custom Coffee</th>
                       <th>Order Info</th>
                       <th>Item count</th>
                       <th>EDIT</th>
@@ -78,6 +87,9 @@
                       <tr>
                         <td> {{$row->id}}</td>
                         <td>{{$row->menuitems->name}}</td>
+                        <td>@if($row->customcoffees!==null)
+                        {{$row->customcoffees->name}}
+                        @endif</td>
                         <td>{{$row->ordersinfo->address}}</td>
                         <td>{{$row->items_count}}</td>
                         <td>

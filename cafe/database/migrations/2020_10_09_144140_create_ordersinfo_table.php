@@ -17,10 +17,12 @@ class CreateOrdersinfoTable extends Migration
             $table->bigIncrements('id');
             $table->datetime('order_time');
             $table->datetime('delivery_time');
+            $table->integer('user_id');
             $table->string('customer_name');
             $table->string('address', 100);
             $table->string('phone', 10);
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

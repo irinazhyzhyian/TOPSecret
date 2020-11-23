@@ -41,4 +41,14 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\CustomCoffee');
     }
+
+    public function ordersinfo()
+    {
+        return $this->hasOne('App\Models\OrdersInfo');
+    }
+
+    public function basket()
+    {
+        return $this->hasOne('App\Models\Basket');
+    }
 }

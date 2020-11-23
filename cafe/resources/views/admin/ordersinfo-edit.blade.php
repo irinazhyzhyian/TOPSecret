@@ -25,6 +25,15 @@
               <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name" value="{{$ordersinfo->delivery_time}}">
             </div>
             <div class="form-group">
+                        <label for="product" class="col-form-label">Customer ID:</label>
+                        <select name="user_id" id='product_id' class="form-control">
+                            <option value="{{$ordersinfo->user_id}}" selected>{{$ordersinfo->user_id}}</option>
+                        @foreach($users as $o)
+                            <option value="{{$o->id}}">{{$o->id}}{{$o->name}}</option>
+                        @endforeach
+                        </select>
+            </div>
+            <div class="form-group">
               <label for="recipient-name" class="col-form-label">Address:</label>
               <input type="text" name='address' class="form-control" id="recipient-name" value="{{$ordersinfo->address}}">
             </div>

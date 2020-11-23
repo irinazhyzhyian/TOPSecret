@@ -16,12 +16,14 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('items_count')->unsigned();
-            $table->integer('item_id');
+            $table->integer('item_id')->nullable();
+            $table->integer('custom_id')->nullable();
             $table->integer('order_info_id');
             $table->foreign('item_id')->references('id')->on('menuitems');
             $table->foreign('order_info_id')->references('id')->on('ordersinfo');
             $table->timestamps();
         });
+
     }
 
     /**

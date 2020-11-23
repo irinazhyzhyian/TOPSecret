@@ -32,6 +32,14 @@
               <input type="text" name='address' class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
+                        <label for="product" class="col-form-label">Customer ID:</label>
+                        <select name="user_id" id='product_id' class="form-control">
+                        @foreach($users as $o)
+                            <option value="{{$o->id}}">{{$o->id}} {{$o->name}}</option>
+                        @endforeach
+                        </select>
+            </div>
+            <div class="form-group">
               <label for="recipient-name" class="col-form-label">Customer Name:</label>
               <input type="text" name='customer_name' class="form-control" id="recipient-name">
             </div>
@@ -70,6 +78,7 @@
                       <th>Order Time</th>
                       <th>Delivery Time</th>
                       <th>Address</th>
+                      <th>Customer ID</th>
                       <th>Customer Name</th>
                       <th>Phone</th>
                       <th>EDIT</th>
@@ -82,6 +91,7 @@
                         <td>{{$row->oder_time}}</td>
                         <td>{{$row->delivery_time}}</td>
                         <td>{{$row->address}}</td>
+                        <td>{{$row->user_id}}</td>
                         <td>{{$row->customer_name}}</td>
                         <td>{{$row->phone}}</td>
                         <td>

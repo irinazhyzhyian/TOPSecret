@@ -17,12 +17,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
-/*Route::get('/home{id}', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/customcoffee-edit/{id}', 'HomeController@edit');
 Route::put('/customcoffee-update/{id}', 'HomeController@update' );
 Route::get('/customcoffee-delete/{id}', 'HomeController@delete');
 Route::any('/dellingradient/{id}', 'HomeController@dellingradient');
 Route::any('/customcoffee-ingradient/{id}', 'HomeController@addingradient');
+
+Route::get('/menu', 'MenuItemsController@index');
+Route::get('cart', 'MenuItemsController@cart');
+Route::get('add-to-cart/{id}', 'MenuItemsController@addToCart');
+Route::patch('update-cart', 'MenuItemsController@update');
+Route::delete('remove-from-cart', 'MenuItemsController@remove');
+Route::any('/save-ordersinfo', 'OrderInfoController@store');
+
+/*Route::get('/cart', 'BasketController@index');
+Route::get('/basketdelete/{id}', 'BasketController@delete');
+Route::get('/pluscount/{id}', 'BasketController@pluscount');
+Route::get('/minuscount/{id}', 'BasketController@minuscount');
+Route::any('/save-ordersinfo', 'OrderInfoController@store');
 */
 
 Route::group(['middleware' => ['auth', 'admin']], function () {

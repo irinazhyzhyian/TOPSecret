@@ -13,4 +13,10 @@ class CustomCoffee extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    public function orders()
+    {
+        return $this->hasOne('App\Models\Orders');
+    }
+
 }
