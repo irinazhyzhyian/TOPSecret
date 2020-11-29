@@ -28,6 +28,10 @@
               <input type="text" name='price' class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
+              <label for="recipient-name1" class="col-form-label">Photo:</label>
+              <input type="text" name='photo' class="form-control" id="recipient-name1">
+            </div>
+            <div class="form-group">
               <label for="recipient-name" class="col-form-label">Description:</label>
               <textarea name='description' class="form-control" id="recipient-name"></textarea>
             </div>
@@ -62,6 +66,7 @@
                       <th>Name</th>
                       <th>Price</th>
                       <th>Description</th>
+                      <th>Photo</th>
                       <th>EDIT</th>
                       <th>DELITE</th>
                     </thead>
@@ -72,8 +77,9 @@
                         <td>{{$row->name}}</td>
                         <td>{{$row->price}}</td>
                         <td>{{$row->description}}</td>
+                        <td>{{$row->photo}}</td>
                         <td>
-                            <a href='/menuitem-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/menuitem-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                         <form action="/menuitem-delete/{{ $row->id }}" mathod="post">

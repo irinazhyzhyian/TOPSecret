@@ -1,6 +1,15 @@
-@extends('layouts.app')
+@extends('layout')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/styleCart.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 @section('title', 'Cart')
 @section('content')
+<div class='col-lg-12 col-sm-12 col-12 text-center'>
+		
+	<h1 class="cursive-font">Пора підтвердити замовлення</h1>	
+
+</div>
+
+<div class='container page'>
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>
@@ -78,6 +87,7 @@
             </div>
       
         </form> 
+</div>
     @endif
 @endsection
 @section('scripts')
