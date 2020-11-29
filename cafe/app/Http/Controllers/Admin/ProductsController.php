@@ -23,7 +23,7 @@ class ProductsController extends Controller
         return redirect('\products')->with('status', "Data added for Products!");
     }
 
-    public function edit(Request $request, $id) {
+    public function edit($id) {
         $products = Products::findOrFail($id);
         return view('admin.product-edit')->with('products', $products);
     }
@@ -38,7 +38,7 @@ class ProductsController extends Controller
         return redirect('/products')->with('status', 'Your data is updated!');
     }
 
-    public function delete(Request $request, $id){
+    public function delete($id){
         $products = Products::findOrFail($id);
         $products->delete();
 

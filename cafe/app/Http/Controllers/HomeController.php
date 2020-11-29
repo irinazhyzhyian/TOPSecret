@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\Ingradients;
 use App\Models\Products;
 use App\Models\MenuItems;
@@ -34,7 +33,6 @@ class HomeController extends Controller
         ->select(DB::raw('customcoffee.name as name, customcoffee.id as id, Sum(product_count*products.price) as price'))
         ->join('ingradients', 'products.id', '=', 'ingradients.product_id')
         ->join('customcoffee', 'customcoffee.id', '=', 'ingradients.custom_id')
-        ->where('user_id', '=',Auth::user()->id)
         ->groupby('customcoffee.name', 'customcoffee.id')
         ->get();
         return view('home')->with('coffee', $coffee);
@@ -55,11 +53,11 @@ class HomeController extends Controller
         $ingradients = Ingradients::find($id);
         $ingradients->product_id = $request->input('product_id');
         $ingradients->product_count = $request->input('product_count');
-    
+
         $ingradients->update();
-    
+
         return redirect()->back();
-        
+
     }
 
     public function delete(Request $request, $id){

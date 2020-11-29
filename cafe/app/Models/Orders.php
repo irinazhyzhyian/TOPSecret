@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orders extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['order_info_id', 'item_id','custom_id', 'items_count'];
+    protected $fillable = ['order_info_id', 'item_id', 'items_count'];
 
     public function ordersinfo()
     {
@@ -17,10 +17,5 @@ class Orders extends Model
     public function menuitems()
     {
         return $this->belongsTo('App\Models\MenuItems', 'item_id');
-    }
-
-    public function customcoffee()
-    {
-        return $this->belongsTo('App\Models\CustomCoffee', 'custom_id');
     }
 }

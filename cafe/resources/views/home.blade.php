@@ -5,7 +5,7 @@
 @section('content')
 <a href='/home'><div class="homeuserheader">Особистий кабінет</div></a>
 <div class="container">
-    <div class="row content-center">   
+    <div class="row content-center">
         @foreach ($coffee as $row)
         <div class="row coffeecard">
             <a class="col" href="/customcoffee-edit/{{ $row->id }}">
@@ -19,9 +19,8 @@
                     </form>
                 </div>
             </a>
-        </div> 
-        @endforeach        
+        </div>
+        @endforeach
     </div>
-</div>
 </div>
 @endsection

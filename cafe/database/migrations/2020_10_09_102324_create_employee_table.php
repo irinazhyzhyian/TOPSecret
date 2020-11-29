@@ -18,8 +18,8 @@ class CreateEmployeeTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->text('description')->nullable();
-            $table->integer('position_id');
-            $table->foreign('position_id')->references('id')->on('positions');
+            $table->unsignedBigInteger('position_id');
+            $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');;
             $table->timestamps();
         });
     }

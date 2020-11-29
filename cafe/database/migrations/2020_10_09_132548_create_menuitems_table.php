@@ -18,7 +18,6 @@ class CreateMenuitemsTable extends Migration
             $table->string('name', 50);
             $table->double('price', 6, 2);
             $table->text('description')->nullable();
-            $table->string("photo", 255)->nullable();
             $table->timestamps();
         });
     }

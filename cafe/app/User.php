@@ -10,14 +10,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password', 'phone'
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,15 +33,5 @@ class User extends Authenticatable
     public function customcoffee()
     {
         return $this->hasOne('App\Models\CustomCoffee');
-    }
-
-    public function ordersinfo()
-    {
-        return $this->hasOne('App\Models\OrdersInfo');
-    }
-
-    public function basket()
-    {
-        return $this->hasOne('App\Models\Basket');
     }
 }

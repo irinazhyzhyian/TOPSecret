@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\OrdersInfo;
-use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -11,7 +10,7 @@ class OrdersInfoController extends Controller
 {
     public function index() {
         $ordersinfo = OrdersInfo::all();
-        return view('admin.ordersinfo')->with('ordersinfo', $ordersinfo)->with('users', User::all());
+        return view('admin.ordersinfo')->with('ordersinfo', $ordersinfo);
     }
 
     public function store(Request $request) {
@@ -19,7 +18,6 @@ class OrdersInfoController extends Controller
         $ordersinfo->order_time = $request->input('order_time');
         $ordersinfo->delivery_time = $request->input('delivery_time');
         $ordersinfo->address = $request->input('address');
-        $ordersinfo->user_id = $request->input('user_id');
         $ordersinfo->customer_name = $request->input('customer_name');
         $ordersinfo->phone = $request->input('phone');
 
@@ -38,7 +36,6 @@ class OrdersInfoController extends Controller
         $ordersinfo->delivery_time = $request->input('delivery_time');
         $ordersinfo->address = $request->input('address');
         $ordersinfo->customer_name = $request->input('customer_name');
-        $ordersinfo->user_id = $request->input('user_id');
         $ordersinfo->phone = $request->input('phone');
 
         $ordersinfo->update();

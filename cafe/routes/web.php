@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/customcoffee-edit/{id}', 'HomeController@edit');
 Route::put('/customcoffee-update/{id}', 'HomeController@update' );
@@ -25,29 +24,21 @@ Route::get('/customcoffee-delete/{id}', 'HomeController@delete');
 Route::any('/dellingradient/{id}', 'HomeController@dellingradient');
 Route::any('/customcoffee-ingradient/{id}', 'HomeController@addingradient');
 
-Route::get('/menu', 'MenuItemsController@index');
-Route::get('cart', 'MenuItemsController@cart');
-Route::get('add-to-cart/{id}', 'MenuItemsController@addToCart');
-Route::patch('update-cart', 'MenuItemsController@update');
-Route::delete('remove-from-cart', 'MenuItemsController@remove');
-Route::any('/save-ordersinfo', 'OrderInfoController@store');
-
-/*Route::get('/cart', 'BasketController@index');
-Route::get('/basketdelete/{id}', 'BasketController@delete');
-Route::get('/pluscount/{id}', 'BasketController@pluscount');
-Route::get('/minuscount/{id}', 'BasketController@minuscount');
-Route::any('/save-ordersinfo', 'OrderInfoController@store');
-*/
+Route::group(['prefix' => 'customcoffee'] , function () {
+    Route::get('/constructor/' , 'CustomCoffeeController@index');
+    Route::post('/constructor/save/' , 'CustomCoffeeController@store');
+    Route::get('/constructor/destroy' , 'CustomCoffeeController@destroy');
+});
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-    
+
     Route::get('/dashboard', 'Admin\DashboardController@range');
 
     Route::get('/role-register', 'Admin\DashboardController@registered');
     Route::get('/role-edit/{id}', 'Admin\DashboardController@registeredit');
     Route::put('/role-register-update/{id}', 'Admin\DashboardController@registerupdate' );
     Route::get('/role-delete/{id}', 'Admin\DashboardController@registerdelete');
-    
+
     Route::get('/positions', 'Admin\PositionsController@index');
     Route::post('/save-position', 'Admin\PositionsController@store');
     Route::get('/position-edit/{id}', 'Admin\PositionsController@edit');

@@ -15,15 +15,12 @@ class CreateCustomcoffeeTable extends Migration
     {
         Schema::create('customcoffee', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
-	    Schema::table('ingradients', function(Blueprint $table){
-            $table->foreign('custom_id')->references('id')->on('customcoffee');
-        });
-        Schema::table('orders', function(Blueprint $table){
+	Schema::table('ingradients', function(Blueprint $table){
             $table->foreign('custom_id')->references('id')->on('customcoffee');
         });
     }
