@@ -21,6 +21,7 @@
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     @yield('title')
@@ -63,7 +64,7 @@
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
-          </li>          
+          </li>
           <li class="{{ 'products' == request()->path() ? 'active' : '' }}">
             <a href="/products">
               <i></i>
@@ -184,7 +185,7 @@
         </div>
       </nav>
       <!-- End Navbar -->
-      
+
       <div class="panel-header panel-header-sm">
       </div>
       <div class="content">

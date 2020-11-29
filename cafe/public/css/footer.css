@@ -1,0 +1,25 @@
+
+.social-net{
+    display: flex;
+
+}
+.facebook{
+    width: 50px;
+    margin-right: 15px;
+    height: 50px;
+    background: url("../assets/img/icons8-значки-facebook-в-форме-круга-50.png") no-repeat;
+}
+.instagram{
+    width: 52px;
+    margin-right: 15px;
+
+    height: 52px;
+    background: url("../assets/img/icons8-instagram-52.png") no-repeat;
+}
+.youtube{
+    width: 50px;
+    margin-right: 15px;
+
+    height: 50px;
+    background: url("../assets/img/icons8-ютуб-48.png") no-repeat;
+}

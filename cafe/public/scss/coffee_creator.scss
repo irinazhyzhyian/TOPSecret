@@ -1,0 +1,144 @@
+.stakan{
+    width: 66px;
+    height: 131px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+}
+
+#all-products{
+    position:relative;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    color: white;
+    justify-content: center;
+    justify-items: center;
+}
+
+#delete_it{
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.milk_coffee{
+    width: 100%;
+    height:10px;
+    background-color: #c6c8ca;
+}
+
+.black_coffee {
+    width: 100%;
+    height:10px;
+    background-color: black;
+}
+.sugar {
+    width: 100%;
+    height:10px;
+    background-color: wheat;
+}
+.caramel{
+    width: 100%;
+    height:10px;
+    background-color: sienna;
+}
+.chocolate{
+    width: 100%;
+    height:10px;
+    background-color: #9f3205;
+}
+
+.container_ingredients{
+    text-align: center;
+}
+.bg-red{
+    background: linear-gradient(104.69deg, #A10F2B 31.17%, #551824 83.56%);
+}
+.container_glass{
+    position:relative;
+    background: white;
+    border-radius: 12px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.size{
+    background: rgba(196, 196, 196, 0.3);
+    border-radius: 13px;
+    padding: 7px 26px 6px 17px;
+}
+
+.size:active{
+    background: white;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 3rem;
+}
+.ingredients{
+    border: 2px solid white;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+    margin-top: 10px;
+}
+.text-20{
+    font-size: 20px;
+    margin-bottom: 0!important;
+}
+.ingredient{
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+.ingredient:hover{
+    color: white;
+}
+.button{
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+    color: black;
+    padding: 5px 20px;
+    font-size: 20px;
+    margin-top: 307px;
+}
+
+.size-s{
+    width: 66px;
+    height: 131px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+}
+
+.size-m{
+    width: 86px;
+    height: 151px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+}
+
+.size-l{
+    width: 106px;
+    height: 171px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+}
+
+
