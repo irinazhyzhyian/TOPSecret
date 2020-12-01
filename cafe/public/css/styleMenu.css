@@ -453,7 +453,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
 }
 .gtco-cover a {
-  color: #6d1010;
+  background: #B22222;
 }
 .gtco-cover a:hover {
   color: white;
@@ -640,7 +640,7 @@ form label {
 #gtco-counter .counter {
   font-size: 50px;
   margin-bottom: 10px;
-  color: #6d1010;
+  color: #B22222;
   font-weight: 100;
   display: block;
 }
@@ -1219,13 +1219,14 @@ form label {
   margin: 0 0 10px 40%;
   color: #B22222;
 }
-.fh5co-card-item .fh5co-text span {
+span {
   color: #B22222;
   font-size: 16px;
   font-weight: 400;
 }
-.fh5co-card-item .fh5co-text p {
+ text {
   color: #000;
+  font-size: 16px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -1257,6 +1258,15 @@ form label {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
 .fh5co-card-item:hover span.btn, .fh5co-card-item:focus span.btn {
   opacity: 1;
   visibility: visible;

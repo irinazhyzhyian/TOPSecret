@@ -25,6 +25,12 @@ Route::get('/customcoffee-delete/{id}', 'HomeController@delete');
 Route::any('/dellingradient/{id}', 'HomeController@dellingradient');
 Route::any('/customcoffee-ingradient/{id}', 'HomeController@addingradient');
 
+Route::group(['prefix' => 'customcoffee'] , function () {
+    Route::get('/constructor/' , 'CustomCoffeeController@index');
+    Route::post('/constructor/save/' , 'CustomCoffeeController@store');
+    Route::get('/constructor/destroy' , 'CustomCoffeeController@destroy');
+});
+
 Route::get('/menu', 'MenuItemsController@index');
 Route::get('cart', 'MenuItemsController@cart');
 Route::get('add-to-cart/{id}', 'MenuItemsController@addToCart');

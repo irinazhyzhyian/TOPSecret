@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.main')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/styleMenu.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
@@ -20,9 +20,9 @@
 
 
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-
+	<link href="{{ asset('css/owl.carousel.min.css') }}">
+	<link href="{{ asset('css/owl.theme.default.min.css') }}">
+	<link type="text/css" href="{{ asset('css/styleMenu.css') }}" rel="stylesheet">
 	
 
 @section('title', 'Menu')
@@ -63,7 +63,7 @@
 					</a>
 						<div class="fh5co-text">
 							<h2 class='title'>{{ $product->name }}</h2>
-							<p style='height: 50px; text-align: center;'>{{ $product->description }}</p>
+							<p class='text' style='height: 50px; text-align: center;'>{{ $product->description }}</p>
 							<p style='margin-left: 40%;'><span style="color: #B22222;" class="price cursive-font">{{ $product->price }} ₴</span></p>
                             <p class="btn-holder"><a style='background: #B22222;' href="{{ url('add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center" role="button">Купити</a> </p>
 						</div>

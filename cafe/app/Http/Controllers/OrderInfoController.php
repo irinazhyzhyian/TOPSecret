@@ -34,7 +34,6 @@ class OrderInfoController extends Controller
         $ordersinfo->phone = $request->input('phone');
 
         $oid=$ordersinfo->save();
-        echo $oid;
 
         //$id = Auth::user()->id;
         /*$order = DB::table('public.basket')

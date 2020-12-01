@@ -1,0 +1,15 @@
+.header {
+background: white;
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    .text-16-800 {
+        font-size: 16px;
+        font-weight: 800;
+        color: black;
+
+        :hover {
+            color: #a10b38;
+        }
+    }
+}

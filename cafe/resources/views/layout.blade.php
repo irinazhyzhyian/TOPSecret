@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,9 +25,9 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-lg-12 col-sm-12 col-12 main-section">
+        <div class="col-lg-11 col-sm-11 col-11 main-section">
             <div class="dropdown">
-                <button type="button" class="btn btn-info" data-toggle="dropdown">
+                <button type="button" style='background: rgb(110, 16, 16);;' class="btn btn-info" data-toggle="dropdown">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Корзина <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                 </button>
                 <div>

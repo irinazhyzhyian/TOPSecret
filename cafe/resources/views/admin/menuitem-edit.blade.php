@@ -30,7 +30,7 @@
                      </div>
                      <div class="form-group">
                         <label for="recipient-name1" class="col-form-label">Photo:</label>
-                        <input name='photo' class="form-control" id="recipient-name1" value='{{$menuitems->description}}'/>
+                        <input name='photo' class="form-control" id="recipient-name1" value='{{$menuitems->photo}}'/>
                      </div>                  
                     <button type="submit" class="btn btn-success">Update</button>
                     <a href="/menuitems" class='btn btn-danger'>Cancel</a>

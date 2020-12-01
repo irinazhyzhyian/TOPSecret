@@ -17,6 +17,7 @@ class MenuItemsController extends Controller
         $menuitems = new MenuItems();
         $menuitems->name = $request->input('name');
         $menuitems->price = $request->input('price');
+        $menuitems->photo = $request->input('photo');
         $menuitems->description = $request->input('description');
 
         $menuitems->save();
@@ -32,6 +33,7 @@ class MenuItemsController extends Controller
         $menuitems = MenuItems::find($id);
         $menuitems->name = $request->input('name');
         $menuitems->price = $request->input('price');
+        $menuitems->photo = $request->input('photo');
         $menuitems->description = $request->input('description');
         $menuitems->update();
 

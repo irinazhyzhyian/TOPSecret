@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 <link href="{{ asset('css/homeuser.css') }}" rel="stylesheet">
-
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link type="text/css" href="{{ asset('css/styleMenu.css') }}" rel="stylesheet">
 @section('content')
 <a href='/home'><div class="homeuserheader">Особистий кабінет</div></a>
 <div class="container">

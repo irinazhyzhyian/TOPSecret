@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 @section('content')
 <div class="container">
@@ -44,7 +44,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"  required>
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" max='10' required>
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">

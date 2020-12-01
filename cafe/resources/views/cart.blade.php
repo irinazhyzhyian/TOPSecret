@@ -1,15 +1,8 @@
-@extends('layout')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/styleCart.css') }}">
+@extends('layouts.main')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 @section('title', 'Cart')
 @section('content')
-<div class='col-lg-12 col-sm-12 col-12 text-center'>
-		
-	<h1 class="cursive-font">Пора підтвердити замовлення</h1>	
-
-</div>
-
-<div class='container page'>
+<div class='container'>
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>
@@ -67,20 +60,20 @@
 
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Час доставки:</label>
-              <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name">
+              <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name" required>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Адреса:</label>
-              <input type="text" name='address' class="form-control" id="recipient-name">
+              <input type="text" name='address' class="form-control" id="recipient-name" required>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Ім'я отримувача:</label>
-              <input type="text" name='customer_name' class="form-control" id="recipient-name" value=@if (isset($user)){{$user->name}}@endif>
+              <input type="text" required name='customer_name' class="form-control" id="recipient-name" value=@if (isset($user)){{$user->name}}@endif>
               <input type="text" name='user_id' hidden value=@if(isset($user)){{$user->id}}@endif>
             </div>
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Номер телефону:</label>
-              <input type="text" name='phone' class="form-control" id="recipient-name" min='10' max='10' value=@if(isset($user)){{$user->phone}}@endif>
+              <label for="recipient-name" required class="col-form-label">Номер телефону:</label>
+              <input type="text" name='phone' pattern="[0]{1}[0-9]{9}" required placeholder="0951458809" class="form-control" id="recipient-name"  value=@if(isset($user)){{$user->phone}}@endif>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Замовити</button>
@@ -92,7 +85,6 @@
 @endsection
 @section('scripts')
     <script type="text/javascript">
-
         $(".update-cart").click(function (e) {
            e.preventDefault();
            var ele = $(this);
