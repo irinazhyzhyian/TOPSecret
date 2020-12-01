@@ -1,4 +1,5 @@
 @extends('layouts.main')
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 <title>Coffee project</title>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -15,6 +16,17 @@
  
 
 @section('content')
+=======
+
+@section('content')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Gusto Coffee</title>
+>>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
 
 <div id="home">
           <nav>
@@ -446,14 +458,31 @@
                   <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
                   <p>+38 066 000 66 66</p>
                 </div>
+<<<<<<< HEAD
               </div>
               <div class="col-md-4">
                 <div class="light-box box-hover">
                   <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
                   <p><a href="#">gustocoffecv@gmail.com</a></p>
+=======
+
+                <script src="{{ asset('js/app.js') }}" defer></script>
+                <div id="example"></div>
+
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://blog.laravel.com">Blog</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+>>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             <div class="row">
               <div class="col-md-12">
                 <ul class="social-buttons">
@@ -477,3 +506,9 @@
         <script src="{{ asset('js/jquery.flexslider.js') }}"></script>
         <script src="{{ asset('js/modernizr.js') }}"></script>
    @endsection
+=======
+        </div>
+    </body>
+</html>
+@endsection
+>>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc

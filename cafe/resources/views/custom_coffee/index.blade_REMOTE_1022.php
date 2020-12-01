@@ -1,9 +1,5 @@
 @extends('layouts.main')
-<<<<<<< HEAD
-<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-=======
 
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
 @section('content')
     <div class="bg-red">
         <div class="container p-5" id="containerForCopy">
