@@ -4,7 +4,7 @@
     <div class="bg-red">
         <div class="container p-5" id="containerForCopy">
                 <div class="container_ingredients row">
-                    <div class="col-xl-4 row ">
+                    <div class="col-xl-4 row mww ">
                         <div class=" col-xl-12 ingredients"><p class="text-20">Ingredients</p></div>
                         <div class="ingredient  col-xl-12 " onclick="addNew('black_coffee')">Espresso</div>
                         <div class="ingredient  col-xl-12 mt-3" onclick="addNew('milk_coffee')">Milk</div>
@@ -42,36 +42,38 @@
                 </div>
                 <form action="{{ action('CustomCoffeeController@store') }}" method="POST">
                             {{ csrf_field() }}
-                            {{ method_field('POST') }} 
+                            {{ method_field('POST') }}
                     <div class="modal-body">
                         <div class="input-group input-group-lg mb-5">
-                            <input type="text" class="form-control" placeholder="Назви свою каву" name="name" id='name' required/>
+                            <input type="text" class="form-control" placeholder="Coffee name" name="name" id='name' required/>
                         </div>
                         <div class="input-group input-group-lg mb-5">
-                            <input type="number" class="form-control" placeholder="Кількість" name="quantity" id='quantity' required/>
+                            <input type="number" class="form-control" placeholder="Quantity" name="quantity" id='quantity' required/>
                         </div>
                         <div id="stakanCopy" class="d-none"></div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Час доставки:</label>
+                            <label for="recipient-name" class="col-form-label">
+                                Delivery time:</label>
                             <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name" required>
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Адреса:</label>
+                            <label for="recipient-name" class="col-form-label">Address:</label>
                             <input type="text" name='address' class="form-control" id="recipient-name" required>
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Ім'я отримувача:</label>
+                            <label for="recipient-name" class="col-form-label">Name:</label>
                             <input type="text" required name='customer_name' class="form-control" id="recipient-name" value=@if (isset($user)){{$user->name}}@endif>
                             <input type="text" name='user_id' hidden value=@if(isset($user)){{$user->id}}@endif>
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" required class="col-form-label">Номер телефону:</label>
+                            <label for="recipient-name" required class="col-form-label">Number:</label>
                             <input type="text" name='phone' pattern="[0]{1}[0-9]{9}" required placeholder="0951458809" class="form-control" id="recipient-name"  value=@if(isset($user)){{$user->phone}}@endif>
                         </div>
+                        <p> Фтн coffee 40 uan</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn " data-dismiss="modal">Close</button>
-                        <button   class="btn " type="submit">Save</button>
+                        <button   class="btn " type="submit">Buy</button>
                     </div>
                 </form>
             </div>

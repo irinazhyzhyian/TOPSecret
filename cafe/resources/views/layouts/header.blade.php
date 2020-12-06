@@ -25,7 +25,7 @@
 <body>
 <nav>
     <div class='headers'>
-        <div>
+        <div class="mt-3">
         <h2 class="logo-g"> GUSTO COFFEE</h2>
         </div>
         <div class="headers-links">
@@ -35,7 +35,7 @@
     <a class="text-16-800" href="{{ url('home') }}"> Room</a>
     <div class="dropdown">
                 <a class="text-16-800" data-toggle="dropdown">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart<span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                    <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>Cart<span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                 </a>
                 <div class="dropdown-menu">
                     <div class="row total-header-section">
@@ -70,24 +70,27 @@
                     </div>
                 </div>
             </div>
-    <!-- Authentication Links -->
-                        @guest
-                                <a class="text-16-800" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            @if (Route::has('register'))
-                                    <a class="text-16-800" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            @endif
-                        @else
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button class="text-16-800" type="submit">
-                                        {{ __('Logout') }}
-                                    </button>
-                                </form>
- 
-                            </li>
-                        @endguest
-                
+
             </div>
+        <!-- Authentication Links -->
+        <div>
+            @guest
+                <a class="text-16-800" href="{{ route('login') }}">{{ __('Login') }}</a>
+                @if (Route::has('register'))
+                    <a class="text-16-800" href="{{ route('register') }}">{{ __('Register') }}</a>
+                @endif
+            @else
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="text btn btn-red" type="submit">
+                        {{ __('Logout') }}
+                    </button>
+                </form>
+
+                </li>
+            @endguest
+        </div>
+        <!-- end Authentication Links -->
         </div>
     </div>
 </nav>

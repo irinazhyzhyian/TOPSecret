@@ -6,10 +6,30 @@
     padding: 10px;
 }
 .headers-links{
-    margin-top: 3px;
+    margin-top: 18px;
 }
 h2{
     margin-bottom: 0;
+}
+.badge-danger {
+    margin-left: 4px!important;
+    color: #fff!important;
+    background-color: #a10b38!important;
+}
+.btn-red{
+    background: #a10b38;
+    color: white;
+}
+.btn-red:hover{
+    color: white;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 800;
+    color: black;
+    margin-right: 15px;
+    margin-top: 7px;
 }
 .text-16-800 {
     font-size: 16px;
@@ -20,7 +40,6 @@ h2{
 }
 .text-16-800:hover {
     color: #a10b38;
-
 }
 a:hover {
     text-decoration: none;
