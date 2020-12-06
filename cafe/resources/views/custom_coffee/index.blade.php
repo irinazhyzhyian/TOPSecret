@@ -1,9 +1,5 @@
 @extends('layouts.main')
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-=======
-
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
 @section('content')
     <div class="bg-red">
         <div class="container p-5" id="containerForCopy">
@@ -45,17 +41,33 @@
                     </button>
                 </div>
                 <form action="{{ action('CustomCoffeeController@store') }}" method="POST">
-                    @csrf
+                            {{ csrf_field() }}
+                            {{ method_field('POST') }} 
                     <div class="modal-body">
                         <div class="input-group input-group-lg mb-5">
-                            <input type="text" class="form-control" placeholder="Tag your coffee" name="name" id='name' required/>
+                            <input type="text" class="form-control" placeholder="Назви свою каву" name="name" id='name' required/>
+                        </div>
+                        <div class="input-group input-group-lg mb-5">
+                            <input type="number" class="form-control" placeholder="Кількість" name="quantity" id='quantity' required/>
                         </div>
                         <div id="stakanCopy" class="d-none"></div>
-                    </div>
-                    <div class='ml-5'>
-                    <h3> Would you like to pay:</h3>
-                    <button type="button" class="btn ">Card</button>
-                    <button   class="btn " type="button">Cash</button>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Час доставки:</label>
+                            <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Адреса:</label>
+                            <input type="text" name='address' class="form-control" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Ім'я отримувача:</label>
+                            <input type="text" required name='customer_name' class="form-control" id="recipient-name" value=@if (isset($user)){{$user->name}}@endif>
+                            <input type="text" name='user_id' hidden value=@if(isset($user)){{$user->id}}@endif>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" required class="col-form-label">Номер телефону:</label>
+                            <input type="text" name='phone' pattern="[0]{1}[0-9]{9}" required placeholder="0951458809" class="form-control" id="recipient-name"  value=@if(isset($user)){{$user->phone}}@endif>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn " data-dismiss="modal">Close</button>

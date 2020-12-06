@@ -21,15 +21,15 @@
         <div class="modal-body">
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Order Time:</label>
-              <input type="datetime-local" name='order_time' class="form-control" id="recipient-name">
+              <input type="datetime-local" required name='order_time' class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Delivery Time:</label>
-              <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name">
+              <input type="datetime-local" required name='delivery_time' class="form-control" id="recipient-name" min='{{date("Y-m-d H:i:s")}}'/>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Address:</label>
-              <input type="text" name='address' class="form-control" id="recipient-name">
+              <input type="text" name='address' required class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
                         <label for="product" class="col-form-label">Customer ID:</label>
@@ -41,11 +41,11 @@
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Customer Name:</label>
-              <input type="text" name='customer_name' class="form-control" id="recipient-name">
+              <input type="text" name='customer_name' required class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Phone:</label>
-              <input type="text" name='phone' class="form-control" id="recipient-name" min='10' max='10'>
+              <input type="text" name='phone' required class="form-control" id="recipient-name" min='10' max='10'>
             </div>
         </div>
         <div class="modal-footer">
@@ -88,14 +88,14 @@
                     @foreach ($ordersinfo as $row)
                       <tr>
                         <td> {{$row->id}}</td>
-                        <td>{{$row->oder_time}}</td>
+                        <td>{{$row->order_time}}</td>
                         <td>{{$row->delivery_time}}</td>
                         <td>{{$row->address}}</td>
                         <td>{{$row->user_id}}</td>
                         <td>{{$row->customer_name}}</td>
                         <td>{{$row->phone}}</td>
                         <td>
-                            <a href='/ordersinfo-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/ordersinfo-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                         <form action="/ordersinfo-delete/{{ $row->id }}" mathod="post">

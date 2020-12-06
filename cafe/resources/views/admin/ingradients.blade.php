@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Product count:</label>
-              <input name='product_count' class="form-control" id="recipient-name">
+              <input name='product_count' required class="form-control" id="recipient-name">
             </div>
         </div>
         <div class="modal-footer">
@@ -83,7 +83,7 @@
                           <td>{{$row->product_count}}</td>
                         
                         <td>
-                            <a href='/ingradient-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/ingradient-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                           <form action="/ingradient-delete/{{ $row->id }}" mathod="post">

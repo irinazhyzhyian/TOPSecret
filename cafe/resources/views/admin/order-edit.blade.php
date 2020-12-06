@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Menu Items count:</label>
-                        <input name='items_count' class="form-control" id="recipient-name" value="{{$orders->items_count}}">
+                        <input name='items_count' required class="form-control" id="recipient-name" value="{{$orders->items_count}}">
                     </div>           
                     <button type="submit" class="btn btn-success">Update</button>
                     <a href="/orders" class='btn btn-danger'>Cancel</a>

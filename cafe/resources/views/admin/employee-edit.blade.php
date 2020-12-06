@@ -18,19 +18,23 @@
                    {{ method_field('PUT') }} 
                    <div class="form-group">
               <label for="recipient-name" class="col-form-label">First name:</label>
-              <input type="text" name='first_name' class="form-control" id="recipient-name" value="{{$employee->first_name}}">
+              <input type="text" name='first_name' class="form-control" id="recipient-name" required value="{{$employee->first_name}}">
             </div>
             <div class="form-group">
               <label for="recipient-name1" class="col-form-label">Last name:</label>
-              <input type="text" name='last_name' class="form-control" id="recipient-name1" value="{{$employee->last_name}}">
+              <input type="text" name='last_name' class="form-control" id="recipient-name1" required value="{{$employee->last_name}}">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name1" class="col-form-label">Photo:</label>
+              <input type="text" name='photo' class="form-control" id="recipient-name1">
             </div>
             <div class="form-group">
               <label for="recipient-name2" class="col-form-label">Description:</label>
-              <textarea name='description' class="form-control" id="recipient-name2">{{$employee->description}}</textarea>
+              <textarea name='description' class="form-control" required id="recipient-name2">{{$employee->description}}</textarea>
             </div>
             <div class="form-group">
               <label for="position_id" class="col-form-label">Position name:</label>
-              <select name="position_id" id='position_id' class="form-control">
+              <select name="position_id" required id='position_id' class="form-control">
                 <option value="{{$employee->positions->id}}" selected>{{$employee->positions->position}}</option>
                         @foreach($pos as $p)
                             <option value="{{$p->id}}">{{$p->position}}</option>

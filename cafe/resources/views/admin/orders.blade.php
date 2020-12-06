@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Menu Items count:</label>
-              <input name='items_count' class="form-control" id="recipient-name">
+              <input name='items_count' required class="form-control" id="recipient-name">
             </div>
         </div>
         <div class="modal-footer">
@@ -86,14 +86,16 @@
                     @foreach ($orders as $row)
                       <tr>
                         <td> {{$row->id}}</td>
-                        <td>{{$row->menuitems->name}}</td>
+                        <td>@if($row->menuitems!==null)
+                          {{$row->menuitems->name}}
+                        @endif</td>
                         <td>@if($row->customcoffees!==null)
                         {{$row->customcoffees->name}}
                         @endif</td>
                         <td>{{$row->ordersinfo->address}}</td>
                         <td>{{$row->items_count}}</td>
                         <td>
-                            <a href='/order-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/order-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                         <form action="/order-delete/{{ $row->id }}" mathod="post">

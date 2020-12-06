@@ -7,6 +7,8 @@ use App\Models\Ingradients;
 use App\Models\Products;
 use App\Models\MenuItems;
 use App\Models\CustomCoffee;
+use App\Models\Orders;
+use App\Models\OrdersInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -30,13 +32,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $coffee =  DB::table('products')
+        /*$coffee =  DB::table('products')
         ->select(DB::raw('customcoffee.name as name, customcoffee.id as id, Sum(product_count*products.price) as price'))
         ->join('ingradients', 'products.id', '=', 'ingradients.product_id')
         ->join('customcoffee', 'customcoffee.id', '=', 'ingradients.custom_id')
         ->where('user_id', '=',Auth::user()->id)
         ->groupby('customcoffee.name', 'customcoffee.id')
-        ->get();
+        ->get();*/
+        $coffee = DB::table('customcoffee')->where('user_id', Auth::user()->id)->get();
         return view('home')->with('coffee', $coffee);
     }
 
@@ -64,7 +67,12 @@ class HomeController extends Controller
 
     public function delete(Request $request, $id){
         $custom  = CustomCoffee::findOrFail($id);
-        $ingradients = Ingradients::where('custom_id', '=', $id)->delete();
+        //$ingradients = Ingradients::where('custom_id', '=', $id)->delete();
+        //$ordersinfo = OrdersInfo::where('user_id', '=', $id)->get();
+        $orders = Orders::where('custom_id', '=', $custom->id)->delete();
+
+        //$ordersinfo->delete();
+        //$orders->delete();
         $custom->delete();
 
         return redirect('/home')->with('status', 'Your data is deleted!');

@@ -12,7 +12,8 @@
             <a class="col" href="/customcoffee-edit/{{ $row->id }}">
                 <div class='circle'>
                     <h5 class='coffeeName'>{{$row->name}}</h5>
-                    <h6 class='coffeePrice'>{{$row->price}} грн</h6>
+                    <h6 class='coffeePrice'>??? грн</h6>
+                    <p>{{$row->composition}}</p>
                     <form action="/customcoffee-delete/{{ $row->id }}" mathod="post">
                         {{ csrf_field() }}
                         {{ method_field('GET') }}

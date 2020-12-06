@@ -18,7 +18,7 @@
                    {{ method_field('PUT') }} 
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="username" value="{{$users->name}}" class="form-control">
+                        <input type="text" name="username" required value="{{$users->name}}" class="form-control">
                     </div>
                     <div class="form-group">
                         <label >Give Role</label>

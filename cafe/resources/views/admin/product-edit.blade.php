@@ -18,11 +18,11 @@
                    {{ method_field('PUT') }} 
                    <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Product name:</label>
-                        <input type="text" name='name' class="form-control" id="recipient-name" value='{{$products->name}}'>
+                        <input type="text" name='name' required class="form-control" id="recipient-name" value='{{$products->name}}'>
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Price:</label>
-                        <input type="text" name='price' class="form-control" id="recipient-name" value='{{$products->price}}'>
+                        <input type="text" name='price' required class="form-control" id="recipient-name" value='{{$products->price}}'>
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Caloric contene:</label>

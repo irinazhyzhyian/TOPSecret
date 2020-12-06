@@ -63,7 +63,7 @@
 					</a>
 						<div class="fh5co-text">
 							<h2 class='title'>{{ $product->name }}</h2>
-							<p class='text' style='height: 50px; text-align: center;'>{{ $product->description }}</p>
+							<p class='text' style='height: 60px; text-align: center;'>{{ $product->description }}</p>
 							<p style='margin-left: 40%;'><span style="color: #B22222;" class="price cursive-font">{{ $product->price }} ₴</span></p>
                             <p class="btn-holder"><a style='background: #B22222;' href="{{ url('add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center" role="button">Купити</a> </p>
 						</div>

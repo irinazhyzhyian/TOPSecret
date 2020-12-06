@@ -1,5 +1,4 @@
 @extends('layouts.main')
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 <title>Coffee project</title>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -16,18 +15,7 @@
  
 
 @section('content')
-=======
-
-@section('content')
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Gusto Coffee</title>
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
-
+<div class='full'>
 <div id="home">
           <nav>
             <div class="container-fluid">
@@ -90,7 +78,7 @@
 								
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <a href="" class="learn-more-btn">MENU</a>
+                        <a href="{{ url('menu') }}" class="learn-more-btn">MENU</a>
                     </div>
                 </div>
 
@@ -325,119 +313,25 @@
               <div class="team-wrapper">
                 <div id="teamSlider">
                   <ul class="slides">
-                    <li>                      
-                      <div class="col-md-4 wp5 delay-05s">
-                        <img src="{{ asset('img/team-02.png') }}" alt="Team Member">
-                        <h2>Cersei Lannister</h2>
-                        <p>Director</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-4 wp5 delay-1s">
-                        <img src="{{ asset('img/team-03.png') }}" alt="Team Member">
-                        <h2>Jamie Lannister</h2>
-                        <p>Administrator</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
+                  @foreach($employee as $e)   
+                    <li>                   
                       <div class="col-md-4 wp5">
-                        <img src="{{ asset('img/team-01.png') }}" alt="Team Member">
-                        <h2>Jon Snow</h2>
-                        <p>Barista</p>
+                        <img width='202' height='220' src="{{ $e->photo  }}" alt="Team Member">
+                        <h2>{{$e->first_name}} {{$e->last_name}}</h2>
+                        <p>{{$e->positions->position}}</p>
                         <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
+                          <p>{{$e->description}}</p>
                         </div>
                       </div>
-					 </li>
-                    <li> 
-                      <div class="col-md-4 wp5 delay-05s">
-                        <img src="{{ asset('img/team-02.png') }}" alt="Team Member">
-                        <h2>Cersei Lannister</h2>
-                        <p>Barista</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-md-4 wp5 delay-1s">
-                        <img src="{{ asset('img/team-03.png') }}" alt="Team Member">
-                        <h2>Jamie Lannister</h2>
-                        <p>barista</p>
-                        <div class="social">
-                          <ul class="social-buttons">
-                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
+					          </li>
+                    @endforeach
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </section>
-		<section id="contact">
-	<section class = "features1 text-center section-padding1" id="features2" style="background:#d11122">
-			<div class = "container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1 style="color:white">форма клієнта</h1>
-						<h1 style="font-size:29px; color:black">Не хочете самі наповнювати кошик?</h1>
-						<h1 style="color:white">Залиште ваші данні і ми вам передзвонимо!</h1>
-					</div>
-				</div>	
-			</div>
-		</section>
-	<!-- contact massage-->
-	<div class="contact-form">
-		<div class="container">
-			<div class="row">
-				<form action="#">
-
-					<div class="col-sm-4">
-						<label for="usr">Your Name</label>
-						<input type="text" class="form-control" id="usr">
-					</div>
-					<div class="col-sm-4">
-						<label for="email">Your Email</label>
-						<input type="email" class="form-control" id="email">
-					</div>
-					<div class="col-sm-4">
-						<label for="number">Your Number</label>
-						<input type="number" class="form-control" id="number" required placeholder="066 123 45 67">
-					</div>
-					<div class="col-sm-12">
-						<label for="massage">Your Massage</label>
-						<textarea class="form-control" rows="5" id="massage"></textarea>
-
-						<button type="submit" class="btn red-btn"> SEND YOUR MESSAGE</button>
-					</div>
-
-				</form>
-			</div>
-		</div>
-	</div>
-</section>
+		
         <section class="dark-bg text-center section-padding contact-wrap" id="contact">
           <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
           <div class="container">
@@ -458,31 +352,14 @@
                   <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
                   <p>+38 066 000 66 66</p>
                 </div>
-<<<<<<< HEAD
               </div>
               <div class="col-md-4">
                 <div class="light-box box-hover">
                   <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
                   <p><a href="#">gustocoffecv@gmail.com</a></p>
-=======
-
-                <script src="{{ asset('js/app.js') }}" defer></script>
-                <div id="example"></div>
-
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
             <div class="row">
               <div class="col-md-12">
                 <ul class="social-buttons">
@@ -494,6 +371,7 @@
             </div>
           </div>
         </section>
+</div>
    @endsection
 
    @section('scripts')
@@ -506,9 +384,3 @@
         <script src="{{ asset('js/jquery.flexslider.js') }}"></script>
         <script src="{{ asset('js/modernizr.js') }}"></script>
    @endsection
-=======
-        </div>
-    </body>
-</html>
-@endsection
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc

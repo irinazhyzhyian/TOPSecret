@@ -15,7 +15,7 @@ class CreateCustomcoffeeTable extends Migration
     {
         Schema::create('customcoffee', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->string('name');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

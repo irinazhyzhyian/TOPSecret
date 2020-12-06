@@ -60,7 +60,7 @@
 
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Час доставки:</label>
-              <input type="datetime-local" name='delivery_time' class="form-control" id="recipient-name" required>
+              <input type="datetime-local" name='delivery_time' min='{{date("Y-m-d H:i:s")}}' class="form-control" id="recipient-name" required>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Адреса:</label>

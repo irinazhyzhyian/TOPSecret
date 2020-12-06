@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-<<<<<<< HEAD
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
 
@@ -25,32 +24,11 @@
 
 <body>
 <nav>
-=======
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('scss/coffee_creator.scss') }}" rel="stylesheet">
-    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
-
-
-</head>
-
-<body>
-<nav class=''>
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
     <div class='headers'>
         <div>
         <h2 class="logo-g"> GUSTO COFFEE</h2>
         </div>
         <div class="headers-links">
-<<<<<<< HEAD
     <a class="text-16-800" href="{{ url('/') }}">Home</a>
     <a class="text-16-800" href="{{ url('menu') }}"> Menu</a>
     <a class="text-16-800"href="{{ url('customcoffee/constructor/') }}">Constructor</a>
@@ -110,15 +88,6 @@
                         @endguest
                 
             </div>
-=======
-    <a class="text-16-800">Home</a>
-    <a class="text-16-800">About</a>
-    <a class="text-16-800"> Coffee</a>
-    <a class="text-16-800"> Food</a>
-    <a class="text-16-800">Special</a>
-    <a class="text-16-800">Team</a>
-    <a class="text-16-800">Constructor</a>
->>>>>>> 3fbe1813acc7ce1d241280f14bd68c93fcb4f1bc
         </div>
     </div>
 </nav>

@@ -21,7 +21,7 @@
         <div class="modal-body">
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Position name:</label>
-              <input type="text" name='position' class="form-control" id="recipient-name">
+              <input type="text" name='position' required class="form-control" id="recipient-name">
             </div>
         </div>
         <div class="modal-footer">
@@ -61,7 +61,7 @@
                         <td> {{$row->id}}</td>
                         <td>{{$row->position}}</td>
                         <td>
-                            <a href='/position-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/position-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                         <form action="/position-delete/{{ $row->id }}" mathod="post">

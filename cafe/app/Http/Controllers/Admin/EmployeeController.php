@@ -19,6 +19,7 @@ class EmployeeController extends Controller
         $employee = new Employee();
         $employee->first_name = $request->input('first_name');
         $employee->last_name = $request->input('last_name');
+        $employee->photo = $request->input('photo');
         $employee->description = $request->input('description');
         $employee->position_id = $request->input('position_id');
 
@@ -37,6 +38,7 @@ class EmployeeController extends Controller
         $employee =Employee::find($id);
         $employee->first_name = $request->input('first_name');
         $employee->last_name = $request->input('last_name');
+        $employee->photo = $request->input('photo');
         $employee->description = $request->input('description');
         $employee->position_id = $request->input('position_id');
         $employee->update();

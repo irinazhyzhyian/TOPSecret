@@ -21,11 +21,11 @@
         <div class="modal-body">
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Product name:</label>
-              <input type="text" name='name' class="form-control" id="recipient-name">
+              <input type="text" name='name' required class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Price:</label>
-              <input type="text" name='price' class="form-control" id="recipient-name">
+              <input type="text" name='price' required class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Caloric contene:</label>
@@ -73,7 +73,7 @@
                         <td>{{$row->price}}</td>
                         <td>{{$row->caloric_content}}</td>
                         <td>
-                            <a href='/product-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/product-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                         <form action="/product-delete/{{ $row->id }}" mathod="post">

@@ -21,15 +21,19 @@
         <div class="modal-body">
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">First name:</label>
-              <input type="text" name='first_name' class="form-control" id="recipient-name">
+              <input type="text" name='first_name' class="form-control" required id="recipient-name">
             </div>
             <div class="form-group">
               <label for="recipient-name1" class="col-form-label">Last name:</label>
-              <input type="text" name='last_name' class="form-control" id="recipient-name1">
+              <input type="text" name='last_name' class="form-control" required id="recipient-name1">
             </div>
             <div class="form-group">
               <label for="recipient-name2" class="col-form-label">Description:</label>
               <textarea name='description' class="form-control" id="recipient-name2"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="recipient-name1" class="col-form-label">Photo:</label>
+              <input type="text" name='photo' class="form-control" id="recipient-name1">
             </div>
             <div class="form-group">
               <label for="position_id" class="col-form-label">Position name:</label>
@@ -70,6 +74,7 @@
                       <th>First name</th>
                       <th>Last name</th>
                       <th>Description</th>
+                      <th>Photo</th>
                       <th>Position</th>
                       <th>EDIT</th>
                       <th>DELITE</th>
@@ -81,9 +86,10 @@
                         <td>{{$row->first_name}}</td>
                         <td>{{$row->last_name}}</td>
                         <td>{{$row->description}}</td>
+                        <td>{{$row->photo}}</td>
                         <td>{{$row->positions->position}}</td>
                         <td>
-                            <a href='/employee-edit/{{ $row->id }}' class='btn, btn-success'>EDIT</a>
+                            <a href='/employee-edit/{{ $row->id }}' class='btn btn-success'>EDIT</a>
                         </td>
                         <td>
                         <form action="/employee-delete/{{ $row->id }}" mathod="post">

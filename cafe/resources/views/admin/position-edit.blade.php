@@ -18,7 +18,7 @@
                    {{ method_field('PUT') }} 
                     <div class="form-group">
                         <label>Position</label>
-                        <input type="text" name="position" value="{{$positions->position}}" class="form-control">
+                        <input type="text" name="position" required value="{{$positions->position}}" class="form-control">
                     </div>                    
                     <button type="submit" class="btn btn-success">Update</button>
                     <a href="/positions" class='btn btn-danger'>Cancel</a>
