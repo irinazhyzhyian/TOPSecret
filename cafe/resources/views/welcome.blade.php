@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styleMenu.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
- 
+
 
 @section('content')
 <div class='full'>
@@ -75,7 +75,7 @@
 						<div class="col-md-12 wow bounceInUp">
 							<div class="home-text text-center">
 								<h1>ВИПІЧКА</h1>
-								
+
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
                         <a href="{{ url('menu') }}" class="learn-more-btn">MENU</a>
@@ -101,7 +101,12 @@
             <div class="row">
               <div class="col-md-8 col-md-offset-2 wp1">
                 <h1 class="arrow">WHY GUSTO?</h1>
-                <p>Текст текст текст текст <a href="#">текст текст текст</a>. текст текст текст. текст текст текст текст текст текст. Текст текст текст текст текст текст текст текст текст текст текст текст текст. Текст текст текст текст текст текст текст.</p>
+                <p>Все як ти любиш! ⠀
+                    ⠀
+                    Смачно, корисно, швидко і завжди під рукою. ⠀
+                    Gusto to-go - забегай, хапай і далі підкорювати світ!
+                    ⠀
+                    Тільки свіжі страви з органічних продуктів. Ідеальне рішення, щоб не нехтувати правильним харчуванням, коли часу зовсім обмаль. </p>
               </div>
             </div>
           </div>
@@ -113,38 +118,38 @@
 						<h1>services</h1>
 						<h3>Наші послуги</h3>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</section>
         <section class="features text-center section-padding" id="features">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                
+
                 <div class="features-wrapper">
                   <div class="col-md-4 wp2">
-                    <div class="icon">
+                    <div class="icon p-4">
                       <i class="fa fa-coffee shadow"></i>
                     </div>
                     <h2>Замовлення на сьогодні</h2>
                     <p>БУДЕ ГОТОВЕ ЗА 20 ХВИЛИН! </p><p>(ЯКЩО ЗАМОВЛЯЄТЕ ТІЛЬКИ НАПІЙ)</p>
                   </div>
                   <div class="col-md-4 wp2 delay-05s">
-                    <div class="icon">
+                    <div class="icon p-4">
                       <i class="fa fa-gift fa-1g shadow"></i>
                     </div>
                     <h2>Сертифікати</h2>
                     <p>ДЛЯ ДРУЗІВ ТА РІДНИХ НА </p> <p>200 / 300 / 500 ГРН.</p>
                   </div>
                   <div class="col-md-4 wp2 delay-1s">
-                    <div class="icon">
+                    <div class="icon p-4">
                       <i class="fa fa-heart shadow"></i>
                     </div>
                     <h2>Замовлення наперед</h2>
                     <p>У  ЗРУЧНИЙ ДЛЯ ВАС ЧАС НА СЬОГОДНІ</p> <p> ЧИ НА НАСТУПНИЙ ДЕНЬ</p>
                   </div>
 				  <div class="col-md-4 wp2 delay-1s">
-                    <div class="icon">
+                    <div class="icon p-4">
                       <i class="fa fa-car shadow"></i>
                     </div>
                     <h2>Доставка</h2>
@@ -163,7 +168,7 @@
 						<h1 style="color:white">Власний рецепт</h1>
 						<h4>Збери свою каву!</h4>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</section>
         <section class="text-center" id="responsive" style="background:#bd0e0e">
@@ -210,7 +215,7 @@
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
                 <h1>Our coffee and food<span><em>best</em> sellers</span></h1>
-                <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
+                <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down p-3"></i></a>
               </div>
             </div>
           </div>
@@ -301,7 +306,7 @@
             </div>
           </div>
         </section>
-        
+
         <section class="team text-center section-padding" id="team">
           <div class="container">
             <div class="row">
@@ -313,8 +318,8 @@
               <div class="team-wrapper">
                 <div id="teamSlider">
                   <ul class="slides">
-                  @foreach($employee as $e)   
-                    <li>                   
+                  @foreach($employee as $e)
+                    <li>
                       <div class="col-md-4 wp5">
                         <img width='202' height='220' src="{{ $e->photo  }}" alt="Team Member">
                         <h2>{{$e->first_name}} {{$e->last_name}}</h2>
@@ -331,9 +336,9 @@
             </div>
           </div>
         </section>
-		
+
         <section class="dark-bg text-center section-padding contact-wrap" id="contact">
-          <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+          <a href="#top" class="up-btn"><i class="fa fa-chevron-up p-3"></i></a>
           <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -363,9 +368,9 @@
             <div class="row">
               <div class="col-md-12">
                 <ul class="social-buttons">
-                  <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
-                  <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                  <li><a href="#" class="social-btn"><i class="fa fa-dribbble p-3"></i></a></li>
+                  <li><a href="#" class="social-btn"><i class="fa fa-twitter p-3"></i></a></li>
+                  <li><a href="#" class="social-btn"><i class="fa fa-envelope p-3"></i></a></li>
                 </ul>
               </div>
             </div>

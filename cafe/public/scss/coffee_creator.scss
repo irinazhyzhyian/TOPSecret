@@ -1,10 +1,14 @@
 .stakan{
-    width: 66px;
-    height: 131px;
+
+    height: 151px;
     border:1px solid black;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
+    width: 22%;
+    margin: 0 auto;
+    -webkit-transform: perspective(100px) rotateX(40deg);
+    transform: perspective(214px) rotateX(-38deg);
 }
 
 #all-products{
@@ -28,28 +32,34 @@
 .milk_coffee{
     width: 100%;
     height:10px;
-    background-color: #c6c8ca;
+    background: url("../assets/img/3918ecc02d32be5210aa939d36b8267e.jpg");
+    background-size: cover;
 }
 
 .black_coffee {
     width: 100%;
     height:10px;
-    background-color: black;
+    background: url("../assets/img/images.jpg");
+    background-size: cover;
 }
 .sugar {
     width: 100%;
     height:10px;
-    background-color: wheat;
+    background: url("../assets/img/текстура-сахара-76701978.jpg");
+    background-size: cover;
+
 }
 .caramel{
     width: 100%;
     height:10px;
-    background-color: sienna;
+    background: url("../assets/img/images (1).jpg");
+    background-size: cover;
 }
 .chocolate{
     width: 100%;
     height:10px;
-    background-color: #9f3205;
+    background: url("../assets/img/images (2).jpg");
+    background-size: cover;
 }
 
 .container_ingredients{
@@ -115,30 +125,40 @@
 }
 
 .size-s{
-    width: 66px;
     height: 131px;
     border:1px solid black;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
+    width: 22%;
+    margin: 0 auto;
+    -webkit-transform: perspective(100px) rotateX(40deg);
+    transform: perspective(214px) rotateX(-38deg);
 }
 
 .size-m{
-    width: 86px;
     height: 151px;
     border:1px solid black;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
+    width: 22%;
+    margin: 0 auto;
+    -webkit-transform: perspective(100px) rotateX(40deg);
+    transform: perspective(214px) rotateX(-38deg);
 }
 
 .size-l{
-    width: 106px;
     height: 171px;
     border:1px solid black;
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
+    width: 22%;
+    margin: 0 auto;
+    -webkit-transform: perspective(100px) rotateX(40deg);
+    transform: perspective(214px) rotateX(-38deg);
 }
-
-
+.mww{
+    max-height: 277px;
+}
